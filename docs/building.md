@@ -41,9 +41,10 @@ Microsoft's newest toolsets may eventually drop Windows 7 support from the
 static CRT; stay on v143 (VS 2022) for Windows 7 targets and keep running the
 import check and the Windows 7 test plan.
 
-> Status: the MSVC configuration is exercised by the GitHub Actions workflow;
-> it has **not** been built on a local Visual Studio installation during
-> development (development used the MinGW-w64 toolchain below).
+> Status: the MSVC x86 and x64 builds are built and tested by the GitHub
+> Actions workflow (VS 2022 / MSVC 19.44, Windows Server 2022 runner: build,
+> full test suite, import check, `doctor` – all passing on 2026-10-28).
+> Day-to-day development used the MinGW-w64 toolchain below.
 
 ## Option B: Linux host (or WSL) with MinGW-w64 — used for development
 

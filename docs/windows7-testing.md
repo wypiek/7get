@@ -16,7 +16,7 @@ Win32 API surface, not that every Windows 7 DLL behaves identically.
 |-------|-----|-----|--------|
 | Release build, zero compiler warnings (`-Wall -Wextra`) | ✔ | ✔ | pass |
 | `tools/check_imports.py`: only Windows 7 DLLs/functions, subsystem 6.1 | ✔ | ✔ | pass (`sevenget.exe`, `sevenget-repotool.exe`, tests) |
-| Unit + integration suite `sevenget_tests.exe` (46 tests) | Wine | not run (no 32-bit Wine available) | 46/46 pass on x64 |
+| Unit + integration suite `sevenget_tests.exe` (46 tests), MinGW build | Wine | not run (no 32-bit Wine available) | 46/46 pass on x64 |
 | `doctor` (CNG SHA-256/ECDSA KATs, WinHTTP TLS 1.2 option, SQLite integrity) | Wine | – | pass |
 | `repo add` of the sample repo with `--fingerprint` | Wine | – | pass |
 | Windows 7 version gating: PuTTY 0.85 (marked NT 10.0) skipped, 0.83 selected | Wine (win7 mode) | – | pass |
@@ -27,7 +27,8 @@ Win32 API surface, not that every Windows 7 DLL behaves identically.
 | HTTP 404 → exit 4; wrong SHA-256 on a real download → exit 5, file deleted, transaction `failed` | Wine | – | pass |
 | `WinVerifyTrust`: valid PuTTY → valid; one byte flipped → "digest mismatch"; 7-Zip → "not signed" | Wine | – | pass |
 | Redirected stdout is UTF-8 with CRLF, `--json` documents parse | Wine | – | pass |
-| MSVC (VS 2022 v143) build | – | – | **not built locally**; configured in CI (`.github/workflows/build.yml`) |
+| MSVC (VS 2022, MSVC 19.44) build + full test suite **natively on Windows Server 2022** (GitHub Actions) | ✔ | ✔ | pass (46/46 each), import check pass, `doctor` runs |
+| MinGW x64 test suite under Wine on GitHub Actions | ✔ | – | pass |
 
 ## What still requires real Windows 7 SP1
 

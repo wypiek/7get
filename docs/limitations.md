@@ -8,9 +8,8 @@ These are deliberate scope limits or open items, not hidden stubs.
   builds, import-table check, full test suite and real package flows under
   Wine in Windows 7 mode) and the checklist that still needs a Windows 7 SP1
   machine.
-- The 32-bit test binary was built but not executed (no 32-bit Wine was
-  available during development).
-- The MSVC build is configured (presets, CI) but was not compiled locally.
+- The 32-bit MinGW test binary was built but not executed (no 32-bit Wine);
+  the 32-bit MSVC test binary passes natively on Windows Server 2022 in CI.
 - ARM64 installers are rejected by the manifest validator in this version.
 
 ## Installation
