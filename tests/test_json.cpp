@@ -15,11 +15,12 @@ TEST(json_parses_valid_document) {
 }
 
 TEST(json_surrogate_pairs) {
-    auto r = ParseJson(R"("\ud83d\ude00")");
+    // Backslashes escaped: MSVC rejects surrogate UCNs even inside raw string literals.
+    auto r = ParseJson("\"\\ud83d\\ude00\"");
     CHECK(r.ok);
     CHECK_EQ(r.value.AsString(), std::string("\xF0\x9F\x98\x80"));
-    CHECK(!ParseJson(R"("\ud83d")").ok);
-    CHECK(!ParseJson(R"("\ude00")").ok);
+    CHECK(!ParseJson("\"\\ud83d\"").ok);
+    CHECK(!ParseJson("\"\\ude00\"").ok);
 }
 
 TEST(json_rejects_malformed) {
