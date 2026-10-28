@@ -1,0 +1,204 @@
+{
+  "id": "7zip.7zip",
+  "name": "7-Zip",
+  "publisher": "Igor Pavlov",
+  "description": "File archiver with a high compression ratio (7z, ZIP, RAR extraction, TAR, GZIP and more).",
+  "license": "LGPL-2.1-or-later AND BSD-3-Clause, with unRAR license restriction",
+  "homepage": "https://www.7-zip.org/",
+  "tags": [
+    "archiver",
+    "compression",
+    "zip",
+    "7z"
+  ],
+  "releases": [
+    {
+      "version": "26.05",
+      "releaseDate": "2026-10-21",
+      "installers": [
+        {
+          "arch": "x64",
+          "type": "msi",
+          "url": "https://github.com/ip7z/7zip/releases/download/26.05/7z2605-x64.msi",
+          "sha256": "3fe4ab99fa15629c652944309a2b2bc6e41fc933fc6b63f5df1ebcf3aea68263",
+          "size": 2008576,
+          "minWindows": "6.1",
+          "scope": [
+            "machine"
+          ],
+          "productCode": "{23170F69-40C1-2702-2605-000001000000}",
+          "uninstall": {
+            "strategy": "msi"
+          },
+          "signature": {
+            "required": false
+          },
+          "notes": "7-Zip's official site states: '7-Zip works in Windows 11 / 10 / 8 / 7 / Vista / XP ...' (https://www.7-zip.org/). The installers are not Authenticode-signed by the publisher; integrity relies on the SHA-256 in the signed repository metadata. Silent switches from https://www.7-zip.org/faq.html; the exe installer writes HKLM\\...\\Uninstall\\7-Zip with a QuietUninstallString (C/Util/7zipInstall/7zipInstall.c)."
+        },
+        {
+          "arch": "x86",
+          "type": "msi",
+          "url": "https://github.com/ip7z/7zip/releases/download/26.05/7z2605.msi",
+          "sha256": "4c2dab7e18696f25f98348fd981db664a982fb159a5f2dd77c9d985a847c6acd",
+          "size": 1574400,
+          "minWindows": "6.1",
+          "scope": [
+            "machine"
+          ],
+          "productCode": "{23170F69-40C1-2701-2605-000001000000}",
+          "uninstall": {
+            "strategy": "msi"
+          },
+          "signature": {
+            "required": false
+          },
+          "notes": "7-Zip's official site states: '7-Zip works in Windows 11 / 10 / 8 / 7 / Vista / XP ...' (https://www.7-zip.org/). The installers are not Authenticode-signed by the publisher; integrity relies on the SHA-256 in the signed repository metadata. Silent switches from https://www.7-zip.org/faq.html; the exe installer writes HKLM\\...\\Uninstall\\7-Zip with a QuietUninstallString (C/Util/7zipInstall/7zipInstall.c)."
+        },
+        {
+          "arch": "x64",
+          "type": "exe",
+          "url": "https://github.com/ip7z/7zip/releases/download/26.05/7z2605-x64.exe",
+          "sha256": "fd99e86f57d8f429ef5ed045bf98315af962e2309b0f1ba87a147a44c71647d0",
+          "size": 1663506,
+          "minWindows": "6.1",
+          "scope": [
+            "machine"
+          ],
+          "silentArgs": [
+            "/S"
+          ],
+          "uninstall": {
+            "strategy": "registry",
+            "registryKey": "7-Zip",
+            "quietArgs": [
+              "/S"
+            ]
+          },
+          "signature": {
+            "required": false
+          },
+          "notes": "7-Zip's official site states: '7-Zip works in Windows 11 / 10 / 8 / 7 / Vista / XP ...' (https://www.7-zip.org/). The installers are not Authenticode-signed by the publisher; integrity relies on the SHA-256 in the signed repository metadata. Silent switches from https://www.7-zip.org/faq.html; the exe installer writes HKLM\\...\\Uninstall\\7-Zip with a QuietUninstallString (C/Util/7zipInstall/7zipInstall.c)."
+        },
+        {
+          "arch": "x86",
+          "type": "exe",
+          "url": "https://github.com/ip7z/7zip/releases/download/26.05/7z2605.exe",
+          "sha256": "6435a470fe7c4769962dbed8a60c641ee21401c833ced06077c80e33e7845a5e",
+          "size": 1362132,
+          "minWindows": "6.1",
+          "scope": [
+            "machine"
+          ],
+          "silentArgs": [
+            "/S"
+          ],
+          "uninstall": {
+            "strategy": "registry",
+            "registryKey": "7-Zip",
+            "quietArgs": [
+              "/S"
+            ]
+          },
+          "signature": {
+            "required": false
+          },
+          "notes": "7-Zip's official site states: '7-Zip works in Windows 11 / 10 / 8 / 7 / Vista / XP ...' (https://www.7-zip.org/). The installers are not Authenticode-signed by the publisher; integrity relies on the SHA-256 in the signed repository metadata. Silent switches from https://www.7-zip.org/faq.html; the exe installer writes HKLM\\...\\Uninstall\\7-Zip with a QuietUninstallString (C/Util/7zipInstall/7zipInstall.c)."
+        }
+      ]
+    },
+    {
+      "version": "23.01",
+      "releaseDate": "2023-06-20",
+      "installers": [
+        {
+          "arch": "x64",
+          "type": "msi",
+          "url": "https://www.7-zip.org/a/7z2301-x64.msi",
+          "sha256": "0ba639b6dacdf573d847c911bd147c6384381a54dac082b1e8c77bc73d58958b",
+          "size": 1933312,
+          "minWindows": "6.1",
+          "scope": [
+            "machine"
+          ],
+          "productCode": "{23170F69-40C1-2702-2301-000001000000}",
+          "uninstall": {
+            "strategy": "msi"
+          },
+          "signature": {
+            "required": false
+          },
+          "notes": "7-Zip's official site states: '7-Zip works in Windows 11 / 10 / 8 / 7 / Vista / XP ...' (https://www.7-zip.org/). The installers are not Authenticode-signed by the publisher; integrity relies on the SHA-256 in the signed repository metadata. Silent switches from https://www.7-zip.org/faq.html; the exe installer writes HKLM\\...\\Uninstall\\7-Zip with a QuietUninstallString (C/Util/7zipInstall/7zipInstall.c)."
+        },
+        {
+          "arch": "x86",
+          "type": "msi",
+          "url": "https://www.7-zip.org/a/7z2301.msi",
+          "sha256": "b32e47f88d03dc29b5cb02c6ed07a7e48015f655346b62a3b32033c49ed9bb06",
+          "size": 1501184,
+          "minWindows": "6.1",
+          "scope": [
+            "machine"
+          ],
+          "productCode": "{23170F69-40C1-2701-2301-000001000000}",
+          "uninstall": {
+            "strategy": "msi"
+          },
+          "signature": {
+            "required": false
+          },
+          "notes": "7-Zip's official site states: '7-Zip works in Windows 11 / 10 / 8 / 7 / Vista / XP ...' (https://www.7-zip.org/). The installers are not Authenticode-signed by the publisher; integrity relies on the SHA-256 in the signed repository metadata. Silent switches from https://www.7-zip.org/faq.html; the exe installer writes HKLM\\...\\Uninstall\\7-Zip with a QuietUninstallString (C/Util/7zipInstall/7zipInstall.c)."
+        },
+        {
+          "arch": "x64",
+          "type": "exe",
+          "url": "https://www.7-zip.org/a/7z2301-x64.exe",
+          "sha256": "26cb6e9f56333682122fafe79dbcdfd51e9f47cc7217dccd29ac6fc33b5598cd",
+          "size": 1589510,
+          "minWindows": "6.1",
+          "scope": [
+            "machine"
+          ],
+          "silentArgs": [
+            "/S"
+          ],
+          "uninstall": {
+            "strategy": "registry",
+            "registryKey": "7-Zip",
+            "quietArgs": [
+              "/S"
+            ]
+          },
+          "signature": {
+            "required": false
+          },
+          "notes": "7-Zip's official site states: '7-Zip works in Windows 11 / 10 / 8 / 7 / Vista / XP ...' (https://www.7-zip.org/). The installers are not Authenticode-signed by the publisher; integrity relies on the SHA-256 in the signed repository metadata. Silent switches from https://www.7-zip.org/faq.html; the exe installer writes HKLM\\...\\Uninstall\\7-Zip with a QuietUninstallString (C/Util/7zipInstall/7zipInstall.c)."
+        },
+        {
+          "arch": "x86",
+          "type": "exe",
+          "url": "https://www.7-zip.org/a/7z2301.exe",
+          "sha256": "9b6682255bed2e415bfa2ef75e7e0888158d1aaf79370defaa2e2a5f2b003a59",
+          "size": 1301195,
+          "minWindows": "6.1",
+          "scope": [
+            "machine"
+          ],
+          "silentArgs": [
+            "/S"
+          ],
+          "uninstall": {
+            "strategy": "registry",
+            "registryKey": "7-Zip",
+            "quietArgs": [
+              "/S"
+            ]
+          },
+          "signature": {
+            "required": false
+          },
+          "notes": "7-Zip's official site states: '7-Zip works in Windows 11 / 10 / 8 / 7 / Vista / XP ...' (https://www.7-zip.org/). The installers are not Authenticode-signed by the publisher; integrity relies on the SHA-256 in the signed repository metadata. Silent switches from https://www.7-zip.org/faq.html; the exe installer writes HKLM\\...\\Uninstall\\7-Zip with a QuietUninstallString (C/Util/7zipInstall/7zipInstall.c)."
+        }
+      ]
+    }
+  ]
+}

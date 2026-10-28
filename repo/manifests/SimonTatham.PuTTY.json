@@ -1,0 +1,139 @@
+{
+  "id": "SimonTatham.PuTTY",
+  "name": "PuTTY",
+  "publisher": "Simon Tatham",
+  "description": "SSH and Telnet client with SCP/SFTP tools (portable ZIP: putty, pscp, psftp, plink, pageant, puttygen).",
+  "license": "MIT",
+  "homepage": "https://www.chiark.greenend.org.uk/~sgtatham/putty/",
+  "tags": [
+    "ssh",
+    "telnet",
+    "sftp",
+    "terminal"
+  ],
+  "releases": [
+    {
+      "version": "0.85",
+      "releaseDate": "2026-08-16",
+      "installers": [
+        {
+          "arch": "x64",
+          "type": "zip",
+          "url": "https://the.earth.li/~sgtatham/putty/0.85/w64/putty.zip",
+          "sha256": "e0b36e5381ecc78dd06a291bab25fb9d95bc991d0d864cf2741a5bde82816668",
+          "size": 4096601,
+          "minWindows": "10.0",
+          "scope": [
+            "user",
+            "machine"
+          ],
+          "uninstall": {
+            "strategy": "files"
+          },
+          "signature": {
+            "required": true,
+            "subject": "Simon Tatham",
+            "files": [
+              "PUTTY.EXE",
+              "PSCP.EXE",
+              "PSFTP.EXE",
+              "PLINK.EXE",
+              "PAGEANT.EXE",
+              "PUTTYGEN.EXE"
+            ]
+          },
+          "notes": "The PuTTY FAQ only promises support for Windows versions still in security support and makes no Windows 7 claim for 0.85, so this release is conservatively marked for Windows 10 (NT 10.0) and later. Windows 7 users get 0.83. SHA-256 values match the vendor's sha256sums file."
+        },
+        {
+          "arch": "x86",
+          "type": "zip",
+          "url": "https://the.earth.li/~sgtatham/putty/0.85/w32/putty.zip",
+          "sha256": "a7a28753a4f91316a8deb8fdc08403b68852ad04a9d2753c413e8e8b8a1a72f1",
+          "size": 3798820,
+          "minWindows": "10.0",
+          "scope": [
+            "user",
+            "machine"
+          ],
+          "uninstall": {
+            "strategy": "files"
+          },
+          "signature": {
+            "required": true,
+            "subject": "Simon Tatham",
+            "files": [
+              "PUTTY.EXE",
+              "PSCP.EXE",
+              "PSFTP.EXE",
+              "PLINK.EXE",
+              "PAGEANT.EXE",
+              "PUTTYGEN.EXE"
+            ]
+          },
+          "notes": "The PuTTY FAQ only promises support for Windows versions still in security support and makes no Windows 7 claim for 0.85, so this release is conservatively marked for Windows 10 (NT 10.0) and later. Windows 7 users get 0.83. SHA-256 values match the vendor's sha256sums file."
+        }
+      ]
+    },
+    {
+      "version": "0.83",
+      "installers": [
+        {
+          "arch": "x64",
+          "type": "zip",
+          "url": "https://the.earth.li/~sgtatham/putty/0.83/w64/putty.zip",
+          "sha256": "9a4376156971c17896fdb80b550b6f1c1dffd7bac40de5d7b16e774bad49cf76",
+          "size": 4094272,
+          "minWindows": "6.1",
+          "scope": [
+            "user",
+            "machine"
+          ],
+          "uninstall": {
+            "strategy": "files"
+          },
+          "signature": {
+            "required": true,
+            "subject": "Simon Tatham",
+            "files": [
+              "PUTTY.EXE",
+              "PSCP.EXE",
+              "PSFTP.EXE",
+              "PLINK.EXE",
+              "PAGEANT.EXE",
+              "PUTTYGEN.EXE"
+            ]
+          },
+          "notes": "The PuTTY FAQ (https://www.chiark.greenend.org.uk/~sgtatham/putty/faq.html) states that 'PuTTY 0.83 still runs on Windows XP', so it is marked compatible with Windows 7 (NT 6.1). SHA-256 values match the vendor's sha256sums file; every executable is Authenticode-signed by 'Simon Tatham'."
+        },
+        {
+          "arch": "x86",
+          "type": "zip",
+          "url": "https://the.earth.li/~sgtatham/putty/0.83/w32/putty.zip",
+          "sha256": "179b4768dc18429c454600206853f10add6293600ef920dbf907b73e89ab2929",
+          "size": 3796975,
+          "minWindows": "6.1",
+          "scope": [
+            "user",
+            "machine"
+          ],
+          "uninstall": {
+            "strategy": "files"
+          },
+          "signature": {
+            "required": true,
+            "subject": "Simon Tatham",
+            "files": [
+              "PUTTY.EXE",
+              "PSCP.EXE",
+              "PSFTP.EXE",
+              "PLINK.EXE",
+              "PAGEANT.EXE",
+              "PUTTYGEN.EXE"
+            ]
+          },
+          "notes": "The PuTTY FAQ (https://www.chiark.greenend.org.uk/~sgtatham/putty/faq.html) states that 'PuTTY 0.83 still runs on Windows XP', so it is marked compatible with Windows 7 (NT 6.1). SHA-256 values match the vendor's sha256sums file; every executable is Authenticode-signed by 'Simon Tatham'."
+        }
+      ]
+    }
+  ]
+}

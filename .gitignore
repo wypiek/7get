@@ -1,0 +1,9 @@
+build/
+/out/
+*.part
+*.part.json
+*.privkey
+*.key
+/.vs/
+/CMakeUserPresets.json
+__pycache__/

@@ -1,0 +1,11 @@
+# Cross-compile for 64-bit Windows with mingw-w64 (win32 thread model).
+set(CMAKE_SYSTEM_NAME Windows)
+set(CMAKE_SYSTEM_PROCESSOR AMD64)
+set(_prefix x86_64-w64-mingw32)
+find_program(CMAKE_C_COMPILER NAMES ${_prefix}-gcc-win32 ${_prefix}-gcc REQUIRED)
+find_program(CMAKE_CXX_COMPILER NAMES ${_prefix}-g++-win32 ${_prefix}-g++ REQUIRED)
+find_program(CMAKE_RC_COMPILER NAMES ${_prefix}-windres windres REQUIRED)
+set(CMAKE_FIND_ROOT_PATH /usr/${_prefix})
+set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
+set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)

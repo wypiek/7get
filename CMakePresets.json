@@ -1,0 +1,46 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": { "major": 3, "minor": 21, "patch": 0 },
+  "configurePresets": [
+    {
+      "name": "msvc-x64",
+      "displayName": "Visual Studio 2022 (v143), x64, static CRT",
+      "generator": "Visual Studio 17 2022",
+      "architecture": "x64",
+      "toolset": "v143",
+      "binaryDir": "${sourceDir}/build/x64",
+      "condition": { "type": "equals", "lhs": "${hostSystemName}", "rhs": "Windows" }
+    },
+    {
+      "name": "msvc-x86",
+      "displayName": "Visual Studio 2022 (v143), x86, static CRT",
+      "generator": "Visual Studio 17 2022",
+      "architecture": "Win32",
+      "toolset": "v143",
+      "binaryDir": "${sourceDir}/build/x86",
+      "condition": { "type": "equals", "lhs": "${hostSystemName}", "rhs": "Windows" }
+    },
+    {
+      "name": "mingw-x64",
+      "displayName": "mingw-w64 cross build, x64 (Linux host)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/x64",
+      "toolchainFile": "${sourceDir}/cmake/mingw-x64.cmake",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
+    },
+    {
+      "name": "mingw-x86",
+      "displayName": "mingw-w64 cross build, x86 (Linux host)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/x86",
+      "toolchainFile": "${sourceDir}/cmake/mingw-x86.cmake",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
+    }
+  ],
+  "buildPresets": [
+    { "name": "msvc-x64", "configurePreset": "msvc-x64", "configuration": "Release" },
+    { "name": "msvc-x86", "configurePreset": "msvc-x86", "configuration": "Release" },
+    { "name": "mingw-x64", "configurePreset": "mingw-x64" },
+    { "name": "mingw-x86", "configurePreset": "mingw-x86" }
+  ]
+}
