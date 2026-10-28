@@ -1,6 +1,8 @@
 // SevenGet - repository, configuration and maintenance commands.
 #include <windows.h>
 
+#include <cstdio>
+
 #include "cli/context.h"
 #include "platform/authenticode.h"
 #include "platform/console.h"

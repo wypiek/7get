@@ -3,6 +3,7 @@
 #include <windows.h>
 
 #include <algorithm>
+#include <cstdio>
 
 #include "install/backend.h"
 #include "platform/authenticode.h"
@@ -448,6 +449,10 @@ int Engine::Install(const std::string& id, const EngineOptions& o, Json& out) {
     Json results = Json::Array();
     int finalCode = kExitOk;
     for (const auto& s : plan.steps) {
+        if (CancelRequested()) {
+            out.Set("results", results);
+            throw Error(kExitCancelled, "cancelled; remaining packages were not installed");
+        }
         Console::Info("");
         Console::Info("Installing " + s.candidate.package->name + " " + s.candidate.release->version + "...");
         Outcome oc = ExecuteInstall(s.candidate, s.dependency, nullptr, "install");
@@ -557,6 +562,10 @@ int Engine::Upgrade(const std::vector<std::string>& ids, bool all, const EngineO
     Json results = Json::Array();
     int finalCode = kExitOk;
     for (const auto& w : work) {
+        if (CancelRequested()) {
+            out.Set("results", results);
+            throw Error(kExitCancelled, "cancelled; remaining packages were not upgraded");
+        }
         Console::Info("");
         Console::Info("Upgrading " + w.rec.packageId + " " + w.rec.version + " -> " + w.cand.release->version + "...");
         Outcome oc;

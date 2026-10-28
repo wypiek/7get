@@ -1,6 +1,8 @@
 #include <windows.h>
 #include <shellapi.h>
 
+#include <iterator>
+
 #include "install/backend.h"
 #include "platform/process.h"
 #include "platform/winutil.h"

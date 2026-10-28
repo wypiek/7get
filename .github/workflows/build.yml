@@ -1,0 +1,73 @@
+name: build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  msvc:
+    name: MSVC ${{ matrix.arch }}
+    runs-on: windows-2022
+    strategy:
+      fail-fast: false
+      matrix:
+        arch: [x64, x86]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure
+        run: cmake --preset msvc-${{ matrix.arch }}
+      - name: Build
+        run: cmake --build --preset msvc-${{ matrix.arch }}
+      - name: Unit and integration tests
+        run: build\${{ matrix.arch }}\sevenget_tests.exe
+      - name: Windows 7 import check
+        run: python tools/check_imports.py build/${{ matrix.arch }}/sevenget.exe build/${{ matrix.arch }}/sevenget-repotool.exe
+      - name: Smoke test
+        run: |
+          build\${{ matrix.arch }}\sevenget.exe version
+          build\${{ matrix.arch }}\sevenget.exe doctor
+      - name: Package
+        run: cmake --install build/${{ matrix.arch }} --config Release --prefix out/sevenget-msvc-${{ matrix.arch }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sevenget-msvc-${{ matrix.arch }}
+          path: out/sevenget-msvc-${{ matrix.arch }}
+
+  mingw:
+    name: mingw-w64 cross ${{ matrix.arch }}
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        arch: [x64, x86]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ninja-build g++-mingw-w64-x86-64-win32 g++-mingw-w64-i686-win32
+      - name: Install Wine (x64 tests)
+        if: matrix.arch == 'x64'
+        run: sudo apt-get install -y wine64
+      - name: Configure
+        run: cmake --preset mingw-${{ matrix.arch }}
+      - name: Build
+        run: cmake --build --preset mingw-${{ matrix.arch }}
+      - name: Windows 7 import check
+        run: python3 tools/check_imports.py build/${{ matrix.arch }}/sevenget.exe build/${{ matrix.arch }}/sevenget-repotool.exe
+      - name: Tests under Wine
+        if: matrix.arch == 'x64'
+        env:
+          WINEDEBUG: -all
+          LANG: C.UTF-8
+        run: wine build/x64/sevenget_tests.exe
+      - name: Package
+        run: cmake --install build/${{ matrix.arch }} --prefix out/sevenget-mingw-${{ matrix.arch }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sevenget-mingw-${{ matrix.arch }}
+          path: out/sevenget-mingw-${{ matrix.arch }}

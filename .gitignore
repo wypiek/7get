@@ -6,3 +6,4 @@ build/
 *.key
 /.vs/
 /CMakeUserPresets.json
+__pycache__/
